@@ -1,0 +1,11 @@
+import 'package:flutter/material.dart';
+
+// Repeating elements are put into one package
+
+class Assets {
+   List<Color> colors = [Color(0xFF4549D3), Color(0xFFF23030), Color(0xFF48E094), Color(0xFF003CFF)];
+   List<String> languages = ["French", "Russian", "Greek"];
+   List<String> languageKeys = ["fr", "ru", "el"];
+}
+
+
