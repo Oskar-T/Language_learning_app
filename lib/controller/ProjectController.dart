@@ -6,7 +6,6 @@ import 'services.dart';
 
 class ProjectController extends GetxController {
 
-
   EditedText textEditor = EditedText();
   List<String> wordsList = [];
   var name = "".obs;
@@ -40,8 +39,6 @@ class ProjectController extends GetxController {
      Future<void> saveProject(Project project) async {
        await insertProject(project);
      }
-
-
 
   }
 

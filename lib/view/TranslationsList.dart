@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:comp_ia/controller/ProjectController.dart';
 import 'package:get/get.dart';
 import 'package:comp_ia/model/TextEditor.dart';
+import 'package:get/route_manager.dart';
 
 class TranslationsList extends StatelessWidget {
   TranslationsList({required this.project});
@@ -12,11 +13,8 @@ class TranslationsList extends StatelessWidget {
   final Project project;
   ProjectController controller = Get.find();
 
-
-
   Widget _wordsView() {
 
-    EditedText textEditor = EditedText();
     List<String> wordsList = project.text.split("!!");
     List<String> translationList = project.translatedText.split("!!");
     print(wordsList);
@@ -63,13 +61,13 @@ class TranslationsList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(controller.name.value),
+        title: Text(project.name),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Get.to(() => ProjectsViewScreen(language: controller.language.value));
-          },
-        child: Icon(Icons.keyboard_arrow_left_outlined),
+          Get.back();
+        },
+        child: Icon(Icons.arrow_back),
       ),
 
       body: Container(

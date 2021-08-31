@@ -41,6 +41,8 @@ class ProjectsViewScreen extends StatelessWidget {
     );
   }
 
+
+
   Widget projectsViewList() {
     if (controller.isEmpty.value) {
       return Center(
@@ -119,6 +121,8 @@ class ProjectsViewScreen extends StatelessWidget {
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.done) {
                   return projectsViewList();
+                } else if(snapshot.hasError){
+                  return Text("Check your internet connection");
                 } else {
                   return CircularProgressIndicator();
                 }

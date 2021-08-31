@@ -9,7 +9,7 @@ class Themes {
       iconTheme: IconThemeData(
         color: Colors.black, //change your color here
   ),
-      color: Colors.white,
+      color: Color(0xFFF5F5F5),
       textTheme: TextTheme(
         headline6: TextStyle(color: Colors.black, fontSize: 25.0, fontWeight: FontWeight.bold)
       ),
