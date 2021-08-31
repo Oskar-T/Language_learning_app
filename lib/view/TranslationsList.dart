@@ -59,21 +59,9 @@ class TranslationsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(project.name),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Get.back();
-        },
-        child: Icon(Icons.arrow_back),
-      ),
-
-      body: Container(
+    return Container(
         padding: EdgeInsets.all(12.0),
         child: _wordsView(),
-      ),
     );
   }
 }

@@ -1,32 +1,44 @@
-
+import 'package:comp_ia/controller/TabBarController.dart';
+import 'package:comp_ia/view/TranslationsList.dart';
 import 'package:flutter/material.dart';
+import 'package:comp_ia/model/Project.dart';
+import 'package:get/get.dart';
+
 
 class TabBarWidget extends StatelessWidget {
 
+  TabBarWidget({required this.project});
+  Project project;
+  final controller = Get.put(TabBarController());
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: DefaultTabController(
-        length: 3,
-        child: Scaffold(
-          appBar: AppBar(
-            bottom: TabBar(
-              tabs: [
-                Tab(icon: Icon(Icons.directions_transit)),
-                Tab(icon: Icon(Icons.directions_bike)),
-              ],
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(project.name),
+        bottom: TabBar(
+          controller: controller.tabBarController,
+          tabs: <Widget>[
+            Tab(
+              icon: Icon(Icons.list_sharp),
             ),
-            title: const Text('Tabs Demo'),
-          ),
-          body: const TabBarView(
-            children: [
-              Icon(Icons.directions_transit),
-              Icon(Icons.directions_bike),
-            ],
-          ),
+            Tab(
+              icon: Icon(Icons.text_snippet_rounded),
+            ),
+          ],
         ),
+      ),
+      body: TabBarView(
+        controller: controller.tabBarController,
+        children: <Widget>[
+          TranslationsList(project: project),
+          Center(
+            child: Text("It's rainy here"),
+          ),
+        ],
       ),
     );
   }
+
 
 }

@@ -1,5 +1,6 @@
 import 'package:comp_ia/controller/ProjectController.dart';
 import 'package:comp_ia/model/Project.dart';
+import 'package:comp_ia/view/TabBarProjectView.dart';
 import 'package:comp_ia/view/TranslationsList.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -39,7 +40,7 @@ class TextInputScreen extends StatelessWidget {
           if(textEditingController.text.length > 1) {
             controller.text = textEditingController.text;
             Project project = await controller.createProject();
-            Get.to(() => TranslationsList(project: project));
+            Get.to(() => TabBarWidget(project: project));
             textEditingController.clear();
           } else {
             Get.snackbar("Alert", "Translate a proper text");

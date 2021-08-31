@@ -2,6 +2,7 @@ import 'package:comp_ia/controller/ProjectController.dart';
 import 'package:comp_ia/controller/ProjectViewController.dart';
 import 'package:comp_ia/controller/services.dart';
 import 'package:comp_ia/view/MainScreen.dart';
+import 'package:comp_ia/view/TabBarProjectView.dart';
 import 'package:comp_ia/view/TranslationsList.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -72,9 +73,8 @@ class ProjectsViewScreen extends StatelessWidget {
                       child: MaterialButton(
                         padding: EdgeInsets.all(12.0),
                         onPressed: () {
-
                           Get.put(ProjectController());
-                          Get.to(TranslationsList(
+                          Get.to(TabBarWidget(
                               project: controller.languageProjectsList[index]));
                         },
                         child: Container(
